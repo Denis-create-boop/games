@@ -3,7 +3,7 @@ from flask import Flask, render_template, abort, send_from_directory
 app = Flask(__name__)
 ROOT = Path(__file__).resolve().parent
 GAMES = {
-    'dino': {'name':'Dino', 'icon':'🦖', 'description':'Перепрыгивайте препятствия и набирайте очки.', 'controls':'Пробел / ↑ — прыжок, ↓ — пригнуться.'},
+    'dino': {'name':'Dino', 'icon':'🦖', 'description':'Бегите через сменяющиеся пейзажи, собирайте монеты и бонусы.', 'controls':'Пробел / ↑ — двойной прыжок, ↓ — пригнуться, P — пауза.'},
     'tetris': {'name':'Tetris', 'icon':'🧩', 'description':'Собирайте линии из падающих фигур.', 'controls':'← → — движение, ↑ — поворот, ↓ — вниз, Enter — сброс, пробел — пауза.'},
     'slot': {'name':'Slot', 'icon':'🎰', 'description':'Аркадная имитация игровых барабанов с виртуальными очками.', 'controls':'Нажмите «Вращать». Только виртуальные очки, без денег.'},
 }
