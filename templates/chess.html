@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Chess 3D{% endblock %}
+{% block bodyclass %}chess-page{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static',filename='chess.css') }}">
+<a class="back" href="{{ url_for('index') }}">← Выбор игры</a>
+<div class="gamehead"><div><span class="tag">STRATEGY / 03</span><h1>♞ Chess 3D</h1></div><button id="new-game">Новая партия</button></div>
+<div class="chess-layout">
+<section class="chess-stage"><div id="chess-status" role="status">Загрузка…</div><div id="scene" aria-label="Шахматная доска"></div><div id="flat" hidden aria-label="Шахматная доска 2D"></div><div class="chess-tools"><button id="camera">Вид сверху / 3D</button><button id="undo">Отменить ход</button><button id="flip">Развернуть</button></div></section>
+<aside class="chess-side"><h2>Настройки</h2><label>Режим<select id="mode"><option value="computer">Против компьютера</option><option value="local">Два игрока</option></select></label><label>Сложность<select id="difficulty"><option value="easy">Лёгкая</option><option value="normal" selected>Средняя</option><option value="hard">Сложная</option></select></label><label>Ваш цвет<select id="color"><option value="w">Белые</option><option value="b">Чёрные</option></select></label><label>Доска<select id="board-theme"><option value="wood">Орех и клён</option><option value="marble">Чёрный и белый мрамор</option><option value="emerald">Изумруд</option><option value="night">Космос</option></select></label><label>Фигуры<select id="piece-theme"><option value="classic">Слоновая кость / эбен</option><option value="metal">Серебро / золото</option><option value="jade">Нефрит / обсидиан</option><option value="neon">Голубой / пурпурный</option></select></label><p class="chess-note">Режим и цвет применяются при новой партии. Стили можно менять в процессе.</p><h2>История ходов</h2><div id="history"></div></aside>
+</div>
+<dialog id="promotion"><h2>Превращение пешки</h2><div class="chess-tools"><button data-piece="q">Ферзь</button><button data-piece="r">Ладья</button><button data-piece="b">Слон</button><button data-piece="n">Конь</button><button id="cancel-promotion">Отмена</button></div></dialog>
+<script type="module" src="{{ url_for('static',filename='chess.js') }}"></script>
+{% endblock %}
