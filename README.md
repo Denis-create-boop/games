@@ -138,3 +138,8 @@ games/
 ---
 
 **ARCADE.** · Play. Improve. Repeat.
+
+
+## GitHub Pages
+
+[Играть в браузере](https://denis-create-boop.github.io/games/). Actions → Publish ARCADE → Run workflow. В версии Pages шахматные правила и компьютерный соперник работают локально на chess.js; исходный Flask API сохранён. При необходимости включите Settings → Pages → GitHub Actions.
